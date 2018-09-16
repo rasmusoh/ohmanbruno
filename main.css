@@ -1,0 +1,31 @@
+.tilted-list {
+    font-size: 28px;
+    transform: rotate(-2.5deg);
+} 
+
+a:hover {
+    font-size: 30px;
+}
+
+#oh-look-diamonds-cat {
+    object-fit:none; 
+    object-position: 0% 0%;
+}
+
+#i-faxens-tidsalder-framsida {
+    margin-left: 5px;
+}
+
+a:hover > #i-faxens-tidsalder-framsida {
+    width: 150px;
+    margin: -70px 0px -79px -7px;
+}
+
+a:hover > #agitprop-guy {
+    transform: rotate(25deg);
+}
+
+a:hover > #oh-look-diamonds-cat {
+    object-fit:none; 
+    object-position: 49.8% 0%;
+}

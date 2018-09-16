@@ -1,0 +1,1 @@
+aws s3 cp C:\folder\file s3://folder/file --content-type "text/html"

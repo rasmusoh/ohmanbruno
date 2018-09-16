@@ -1,12 +1,13 @@
 body {
     background-color: black;
+    color: white;
+    font-size: 16px;
+    font-family: monospace;
 }
 
 a {
     color: white;
     margin: 20px;
-    font-size: 16px;
-    font-family: monospace;
 }
 
 a:hover {
@@ -21,12 +22,19 @@ a:hover {
     transform: rotate(1deg);
 }
 
+.current {
+    transform: rotate(1deg);
+    padding: 5px;
+    margin: 20px;
+    color: white;
+    border: solid 2px white;
+}
 
 a:visited {
     color: white;
 }
 
-.links-container {
+.links-group {
     display: flex;
     justify-content: center;
 }

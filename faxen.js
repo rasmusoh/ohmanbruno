@@ -32,7 +32,7 @@ function setupNextPrevLinks(from, to) {
     linksHtml += "</div>";
 
     linksHtml += getNumberedLinks(from);
-    linksHtml += "<div><a href=\"https://www.vulkanmedia.se/butik/bocker/faxens-tidsalder-av-rasmus-ohman/\">Köp boken</a>";
+    linksHtml += "<div class=\"links-group\"><a href=\"https://www.vulkanmedia.se/butik/bocker/faxens-tidsalder-av-rasmus-ohman/\">Köp boken</a></div>";
 
     const linkContainers = document.getElementsByClassName("links-container");
     for (i = 0; i < linkContainers.length; i++) {

@@ -10,7 +10,7 @@ function load() {
     const toPage = pages[1];
 
     var contentHtml = '';
-    for (var i = fromPage; i < toPage; i++) {
+    for (var i = fromPage; i <= toPage; i++) {
         const pageNumberThreeDigits = ('00' + i).slice(-3);
         const pageUrl =
             CONTENT_BASE_URL + '/sida-' + pageNumberThreeDigits + '.png';

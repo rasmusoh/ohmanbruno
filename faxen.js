@@ -3,14 +3,16 @@ const PAGES_PER_PAGE = 10;
 const COMIC_BASE_URL = '/i-faxens-tidsalder.html';
 const CONTENT_BASE_URL =
     'https://s3.eu-central-1.amazonaws.com/i-faxens-tidsalder/sidor';
+const BUY_LINK =
+    '<div class="links-group"><a href="https://www.vulkanmedia.se/faxens-tidsalder-av-rasmus-ohman/">Köp boken</a></div>';
 
 function load() {
     const pages = getPagesFromUrl();
-    const fromPage = pages[0];
-    const toPage = pages[1];
+    const from = pages[0] || 1;
 
     var contentHtml = '';
-    for (var i = fromPage; i <= toPage; i++) {
+    const to = from + PAGES_PER_PAGE;
+    for (var i = from; i < to; i++) {
         const pageNumberThreeDigits = ('00' + i).slice(-3);
         const pageUrl =
             CONTENT_BASE_URL + '/sida-' + pageNumberThreeDigits + '.png';
@@ -26,7 +28,7 @@ function load() {
     const contentDiv = document.getElementById('content');
     contentDiv.innerHTML = contentHtml;
 
-    setupHeaderLinks(fromPage, toPage);
+    setupHeaderLinks(from, to);
 }
 
 function setupHeaderLinks(from, to) {
@@ -39,9 +41,7 @@ function setupHeaderLinks(from, to) {
     linksHtml += '</div>';
 
     linksHtml += getNumberedLinks(from);
-    linksHtml +=
-        '<div class="links-group"><a href="https://www.vulkanmedia.se/butik/bocker/faxens-tidsalder-av-rasmus-ohman/">Köp boken</a></div>';
-
+    linksHtml += BUY_LINK;
     const linkContainers = document.getElementsByClassName('links-container');
     for (i = 0; i < linkContainers.length; i++) {
         linkContainers[i].innerHTML = linksHtml;
@@ -63,13 +63,11 @@ function getPreviousLink(from) {
 }
 
 function getNextLink(to) {
-    const fromNext = to + 1;
-    const toNext = Math.min(NO_PAGES, to + PAGES_PER_PAGE);
     const styleNext = to >= NO_PAGES ? 'visibility: hidden;' : '';
 
     return (
         '<a class="next" href="' +
-        getUrlFromPages(fromNext, toNext) +
+        getUrlFromPages(to) +
         '" style="' +
         styleNext +
         '">Vidare -></a>'
@@ -86,19 +84,15 @@ function getNumberedLinks(currentFrom) {
             linksHtml += '<p class="current">' + fromTo + '</p>';
         } else {
             linksHtml +=
-                '<a href="' +
-                getUrlFromPages(from, to) +
-                '">' +
-                fromTo +
-                '</a>';
+                '<a href="' + getUrlFromPages(from) + '">' + fromTo + '</a>';
         }
     }
     linksHtml += '</div>';
     return linksHtml;
 }
 
-function getUrlFromPages(from, to) {
-    return COMIC_BASE_URL + '?from=' + from + '&to=' + to;
+function getUrlFromPages(from) {
+    return COMIC_BASE_URL + '?from=' + from;
 }
 
 function getPagesFromUrl() {

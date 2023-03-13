@@ -1,0 +1,68 @@
+body {
+    /* background-color: #212121; */
+    /* color: white; */
+    font-size: 16px;
+    font-family: monospace;
+}
+
+dt {
+    font-weight: bold;
+}
+
+
+.game-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.game-card {
+    padding: 1.5em;
+    border-radius: 10px;
+    margin: 1.5em;
+    max-width: 800px;
+
+}
+
+@media (max-width: 1000px) {
+    .game-card {
+        border-radius: 0px;
+        padding: 0.5em;
+        margin: 1.5em 0;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+summary {
+    font-size: 32px;
+}
+
+.pangpang {
+    background-color: #3f475c;
+    color: #ffffff;
+}
+
+.en-garde {
+    background-color: #2c2c2c;
+    color: #ffffcc;
+}
+
+.seuppikurvan {
+    background-color: black;
+    color: white;
+}
+
+.oh-look-diamonds {
+    background-color: #1f1f1f;
+    color: #ffffcc;
+}
+
+.agitprop {
+    /* color: #d34a45; the red*/
+    background-color: #d8d6c7;
+    color: #201d16;
+
+    /* background-color: #201d16; the black*/
+    /* background-color: #f7ef9f; the yellow */
+}

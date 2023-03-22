@@ -1,0 +1,3 @@
+[submodule "oh-look-diamonds"]
+	path = oh-look-diamonds
+	url = git@github.com:rasmusoh/oh-look-diamonds

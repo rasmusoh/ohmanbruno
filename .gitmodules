@@ -1,3 +1,6 @@
 [submodule "oh-look-diamonds"]
 	path = oh-look-diamonds
 	url = git@github.com:rasmusoh/oh-look-diamonds
+[submodule "se-upp-i-kurvan"]
+	path = se-upp-i-kurvan
+	url = git@github.com:rasmusoh/se-upp-i-kurvan
